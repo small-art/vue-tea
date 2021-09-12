@@ -1,0 +1,58 @@
+{
+  "id": "2790500",
+  "name": "vue-tea",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1318184",
+      "name": "wunsun-logo",
+      "font_class": "wunsun-logo",
+      "unicode": "e60c",
+      "unicode_decimal": 58892
+    },
+    {
+      "icon_id": "708166",
+      "name": "客服",
+      "font_class": "wodekefu",
+      "unicode": "e68b",
+      "unicode_decimal": 59019
+    },
+    {
+      "icon_id": "10593750",
+      "name": "大拇指,赞,good,优秀_jurassic",
+      "font_class": "jurassic_zan",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "11987045",
+      "name": "搜索",
+      "font_class": "sousuo",
+      "unicode": "e665",
+      "unicode_decimal": 58981
+    },
+    {
+      "icon_id": "16136922",
+      "name": "垃圾",
+      "font_class": "laji",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "21513517",
+      "name": "火热1",
+      "font_class": "1_huore-59",
+      "unicode": "f588",
+      "unicode_decimal": 62856
+    },
+    {
+      "icon_id": "22806245",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e60d",
+      "unicode_decimal": 58893
+    }
+  ]
+}

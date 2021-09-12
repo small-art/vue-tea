@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2790500 */
+  src: url('../fonts/iconfont.woff2?t=1630816485589') format('woff2'),
+       url('../fonts/iconfont.woff?t=1630816485589') format('woff'),
+       url('../fonts/iconfont.ttf?t=1630816485589') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fangdajing:before {
+  content: "\e67f";
+}
+
+.icon-wunsun-logo:before {
+  content: "\e60c";
+}
+
+.icon-wodekefu:before {
+  content: "\e68b";
+}
+
+.icon-jurassic_zan:before {
+  content: "\e696";
+}
+
+.icon-sousuo:before {
+  content: "\e665";
+}
+
+.icon-laji:before {
+  content: "\e604";
+}
+
+.icon-1_huore-59:before {
+  content: "\f588";
+}
+
+.icon-home:before {
+  content: "\e60d";
+}
+
