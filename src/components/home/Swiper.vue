@@ -10,14 +10,9 @@
 <script>
 export default {
 	name: 'carrousel',
+	props:["swiperList"],
 	data() {
 		return {
-			swiperList: [
-				{ id: 1, imgUrl: './images/swiper1.jpeg' },
-				{ id: 2, imgUrl: './images/swiper2.jpeg' },
-				{ id: 3, imgUrl: './images/swiper3.jpeg' },
-				{ id: 4, imgUrl: './images/swiper4.jpeg' }
-			],
 			swiperOptions: {
 				pagination: {
 					el: '.swiper-pagination',
@@ -40,7 +35,6 @@ export default {
 .swiper {
 	width: 100%;
 	height: 11.5rem;
-	margin-top: 5.6rem;
 }
 .swiperimg {
 	width: 100%;

@@ -10,6 +10,9 @@ module.exports = {
 		// port: "8080", // 代理断就
 		// https: false,
 		// hotOnly: false, // 热更新
+		
+		
+		// 代理
 		  proxy: {
 		    "/api": {
 		      target:

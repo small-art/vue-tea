@@ -1,5 +1,5 @@
 <template>
-	<header>
+	<div class="header">
 		<h1>
 			<i class="logo iconfont icon-wunsun-logo"></i>
 		</h1>
@@ -10,7 +10,7 @@
 		<div >
 			<i class="kefu iconfont icon-wodekefu"></i>
 		</div>
-	</header>
+	</div>
 </template>
 
 <script>
@@ -18,12 +18,9 @@
 </script>
 
 <style scoped lang="scss">
-	header{
+	.header{
 		background: #b0352f;
 		width: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
 		height: 2.8125rem;
 		display: flex;
 		justify-content: space-between;
@@ -48,8 +45,7 @@
 			font-size: 1rem;
 			padding-right: 0.3125rem;
 		}
-		span{
-		}
+		
 	}
 	.kefu{
 		font-size: 2rem;

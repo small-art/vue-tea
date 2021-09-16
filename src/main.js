@@ -13,6 +13,8 @@ import '@/assets/js/flexible.js'
 // iconfont 图标库全局引入
 import '@/assets/css/iconfont.css'
 
+// better-scroll 滚动插件
+// import BScroll from '@better-scroll/core'
 
 // swiper组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'

@@ -22,7 +22,7 @@
 	
 	.name::before,.name::after{
 		
-		position: absolute;
+		position: absolute; 
 		content: "";
 		width: 0.65rem;
 		height: .65rem;

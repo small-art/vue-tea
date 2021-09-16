@@ -61,14 +61,11 @@ export default {
 <style scoped>
 .tabbar {
 	width: 100%;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	z-index: 999;
 	height: 3.4rem;
 	border-top: 1px solid #ccc;
 	background-color: #fff;
 	text-align: center;
+	z-index: 999;
 }
 
 .tabbar-content {
