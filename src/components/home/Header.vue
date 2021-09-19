@@ -3,7 +3,7 @@
 		<h1>
 			<i class="logo iconfont icon-wunsun-logo"></i>
 		</h1>
-		<div class="search">
+		<div class="search" @click="goSearch">
 			<img class="search-icon" src="../../assets/images/sousou.png" >
 			<span class="search-name">搜索的内容</span>
 		</div>
@@ -14,7 +14,13 @@
 </template>
 
 <script>
-	
+	export default{
+		methods:{
+			goSearch(){
+				this.$router.push('/search');
+			}
+		}
+	}
 </script>
 
 <style scoped lang="scss">
@@ -28,10 +34,15 @@
 		color: #ffff;
 		padding: 0 0.425rem;
 	}
+	h1{
+		margin-bottom: 1.225rem;
+		margin-right: 0.5625rem;
+	}
 	.logo{
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 	}
 	.search{
+		cursor: text;
 		font-size: 0.9375rem;
 		width: 15rem;
 		background: #FFf;
@@ -39,6 +50,7 @@
 		line-height: 1.8125rem;
 		padding: 0 0.625rem;
 		border-radius: 1.25rem;
+		
 		img{
 			width: 1.2rem;
 			height: .8rem;

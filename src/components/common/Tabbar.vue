@@ -17,31 +17,31 @@ export default {
 				{
 					title: '首页',
 					path: '/home',
-					active: './images/home.png',
-					selected: './images/homeSelect.png'
+					active: '/images/home.png',
+					selected: '/images/homeSelect.png'
 				},
 				{
 					title: '分类',
 					path: '/list',
-					active: './images/list.png',
-					selected: './images/listSelect.png'
+					active: '/images/list.png',
+					selected: '/images/listSelect.png'
 				},
 				{
 					title: '功夫茶',
 					path: '/tea',
-					active: './images/tea.png',
-					selected: './images/teaSelect.png'
+					active: '/images/tea.png',
+					selected: '/images/teaSelect.png'
 				},
 				{
 					title: '购物车',
 					path: '/cart',
-					active: './images/cart.png'
+					active: '/images/cart.png'
 				},
 				{
 					title: '我的',
 					path: '/my',
-					active: './images/my.png',
-					selected: './images/mySelect.png'
+					active: '/images/my.png',
+					selected: '/images/mySelect.png'
 				}
 			]
 		};
@@ -61,7 +61,6 @@ export default {
 <style scoped>
 .tabbar {
 	width: 100%;
-	height: 3.4rem;
 	border-top: 1px solid #ccc;
 	background-color: #fff;
 	text-align: center;

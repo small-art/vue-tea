@@ -1,25 +1,32 @@
 <template>
 	<div class="ad">
-		<block v-for="(item,index) in adList" :key="index">
-			<img :src="item.imgUrl" >
-		</block>
+		<section>
+			<div v-for="(item,index) in adList" :key="index">
+				<ul>
+					<li>
+						<img :src="item.imgUrl" >
+					</li>
+				</ul>
+			</div>
+		</section>
+		
 	</div>
 </template>
 
 <script>
-	export default{
-		props:['adList']
-		
+export default {
+	props: {
+		adList: Array
 	}
+};
 </script>
 
 <style scoped>
-	.ad{
-		width: 100%;
-		height: 6.25rem;
-	}
-	.ad img{
-		width: 100%;
-		height: 100%;
-	}
+.ad {
+	width: 100%;
+}
+img {
+	width: 100%;
+	height: 100%;
+}
 </style>

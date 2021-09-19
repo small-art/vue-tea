@@ -9,13 +9,14 @@ router.get('/', function(req, res, next) {
 });
 router.get('/api/index_list/1/data/1', function(req, res, next) {
 	res.send({
+		code:1,
 		data:[
 			{
 				id:1,
 				type:'adList',
 				data:[
-					{id:1,imgUrl:'./images/ad.png'},
-					{id:2,imgUrl:'./images/ad.png'}
+					{id:1,imgUrl:'./images/dhp.png'},
+					{id:2,imgUrl:'./images/dhp1.jpg'}
 				]
 			},
 			{
@@ -49,7 +50,8 @@ router.get('/api/index_list/0/data/1', function(req, res, next) {
 	res.send({
 		code: 0,
 		data: {
-			topBar: [{
+			topBar: [
+				{
 					id: 0,
 					label: '首页'
 				},

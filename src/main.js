@@ -13,14 +13,16 @@ import '@/assets/js/flexible.js'
 // iconfont 图标库全局引入
 import '@/assets/css/iconfont.css'
 
-// better-scroll 滚动插件
-// import BScroll from '@better-scroll/core'
+// vantui库
+import Vant from 'vant';
+import 'vant/lib/index.css';
 
 // swiper组件
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-// import style (<= Swiper 5.x)
 import 'swiper/css/swiper.css'
+
 Vue.use(VueAwesomeSwiper)
+Vue.use(Vant);
 
 // 滑动效果
 import LyTab from 'ly-tab'

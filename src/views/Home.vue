@@ -2,9 +2,9 @@
 	<div class="home">
 		<div class="headers">
 			<Header></Header>
-			<ly-tab v-model="selectedId" :items="items" :options="options" @change="changeTab" class="topBbar"></ly-tab>
+			<ly-tab v-model="selectedId" :items="items" :options="options" @change="changeTab"></ly-tab>
 		</div>
-		<section class="wrapper">
+		<section ref="wrapper">
 			<div>
 				<div v-for="(item, index) in newData" :key="index">
 					<Swiper v-if="item.type === 'swiperList'" :swiperList="item.data"></Swiper>
@@ -40,9 +40,12 @@ export default {
 			selectedId: 0,
 			items: [],
 			newData: [],
+			oBetterScroll: '',
+			tBetterScroll: '',
 			options: {
 				activeColor: '#ed435b',
-				lineWidth: 3
+				lineWidth: 3,
+				probeType:1
 			}
 		};
 	},
@@ -57,13 +60,6 @@ export default {
 		Tabbar
 	},
 
-	mounted() {
-		new BetterScroll('.wrapper', {
-			movable: true,
-			zoom: true
-		});
-	},
-
 	created() {
 		this.getData();
 	},
@@ -75,18 +71,34 @@ export default {
 			});
 			this.items = Object.freeze(res.data.data.topBar);
 			this.newData = Object.freeze(res.data.data.data);
+
+			// dom加载完毕了才执行
+			this.$nextTick(() => {
+				this.oBetterScroll = new BetterScroll(this.$refs.wrapper, {
+					movable: true,
+					zoom: true
+				});
+			});
 		},
 
 		async addData(index) {
 			let res = await axios({
-				url: '/api/index_list/'+index+'/data/1'
+				url: '/api/index_list/' + index + '/data/1'
 			});
-			
-			if(res.data.data.constructor != Array){
+
+			if (res.data.data.constructor != Array) {
 				this.newData = res.data.data.data;
-			}else{
+			} else {
 				this.newData = res.data.data;
 			}
+
+			// dom加载完毕了才执行
+			this.$nextTick(() => {
+				this.tBetterScroll = new BetterScroll(this.$refs.wrapper, {
+					movable: true,
+					zoom: true
+				});
+			});
 		},
 
 		changeTab(item, index) {

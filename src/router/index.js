@@ -4,8 +4,7 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-	{
+const routes = [{
 		path: '/home',
 		name: 'home',
 		component: Home
@@ -33,7 +32,28 @@ const routes = [
 		path: '/my',
 		name: 'My',
 		component: () => import('../views/My.vue')
-	}
+	},
+	{
+		path: '/search',
+		name: 'Search',
+		children:[
+			{
+				path: '/',
+				name: 'index',
+				component:() =>  import('../views/search/Search-index.vue')
+				
+			},
+			{
+				path: "list",
+				name: "list",
+				component: () =>  import('../views/search/Search-list.vue')
+			}
+		],
+		component: () => import('../views/search/Search.vue')
+	},
+	
+	
+	
 ]
 
 const router = new VueRouter({
