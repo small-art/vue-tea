@@ -13,15 +13,24 @@
 export default {
 	data() {
 		return {
-			searchVal: '',
+			searchVal: this.$route.query.key || '',
 			searchArr: []
 		};
 	},
+	
+	// created() {
+	// 	if(!this.$route.query){
+			
+	// 	}
+	// 	// this.$route.query
+	// }, 
+	
 	methods: {
 		goBack() {
 			this.$router.back();
 		},
 		goSeachList() {
+			
 			// 没有数据就直接返回
 			if (!this.searchVal) return ;
 
@@ -43,11 +52,17 @@ export default {
 			// 本地存储赋值完成之后 转换成数组
 			localStorage.setItem('searchList', JSON.stringify(Array.from(newArr)));
 
+			// 路径相同就不进行跳转
+			if(this.searchVal === this.$route.query.key) return;
 			
 			// 跳转页面
 			this.$router.push({
-				name: 'list'
+				name: 'list',
+				query:{
+					key:this.searchVal
+				}
 			});
+			
 		}
 	}
 };

@@ -1,5 +1,6 @@
 <template>
 	<div class="home">
+		<van-loading class="loading" type="spinner" color="#1989fa" /><van-loading/>
 		<div class="headers">
 			<Header></Header>
 			<ly-tab v-model="selectedId" :items="items" :options="options" @change="changeTab"></ly-tab>
@@ -34,6 +35,7 @@ import Tabbar from '@/components/common/Tabbar.vue';
 // 插件
 import BetterScroll from 'better-scroll';
 import axios from 'axios';
+
 export default {
 	data() {
 		return {
@@ -45,7 +47,7 @@ export default {
 			options: {
 				activeColor: '#ed435b',
 				lineWidth: 3,
-				probeType:1
+				probeType: 1
 			}
 		};
 	},
@@ -109,6 +111,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.loading {
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
+	height: 100%;
+	background: rgba(255, 255, 255, 0.5);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .home {
 	display: flex;
 	flex-direction: column;

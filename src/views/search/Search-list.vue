@@ -87,15 +87,11 @@
 		.list-item{
 			display: flex;
 			font-size: 1rem;
-			padding: 1.25rem;
+			padding: .5rem;
 			justify-content: space-around;
 			align-items: center;
-			div{
-				margin-right: 1.25rem;
-			}
 			.sales{
 				display: flex;
-				
 				justify-content: center;
 				align-items: center;
 				.sales-item{
