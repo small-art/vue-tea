@@ -8,7 +8,7 @@
 					<i class="iconfont icon-laji" @click="remove"></i>
 				</div>
 				<ul class="search-item">
-					<li v-for="(item, index) in searchArr" :key="index">{{ item }}</li>
+					<li v-for="(item, index) in searchArr" :key="index" @click="gosearchList(item)">{{ item }}</li>
 				</ul>
 			</div>
 
@@ -46,6 +46,14 @@ export default {
 				this.searchArr = [];
 			})
 			.catch(() => {});
+		},
+		gosearchList(item){
+			this.$router.push({
+				name:'list',
+				query:{
+					key:item
+				}
+			})
 		}
 	},
 

@@ -1,6 +1,6 @@
 <template>
 	<div class="home">
-		<van-loading class="loading" type="spinner" color="#1989fa" /><van-loading/>
+		<Loading v-show="LOADING"></Loading>
 		<div class="headers">
 			<Header></Header>
 			<ly-tab v-model="selectedId" :items="items" :options="options" @change="changeTab"></ly-tab>
@@ -32,9 +32,10 @@ import Recommend from '@/components/home/Recommend.vue';
 import Like from '@/components/home/Like.vue';
 import Ad from '@/components/home/Ad.vue';
 import Tabbar from '@/components/common/Tabbar.vue';
+import Loading from '@/components/home/Loading.vue';
+import http from '@/common/api/request.js'
 // 插件
 import BetterScroll from 'better-scroll';
-import axios from 'axios';
 
 export default {
 	data() {
@@ -44,6 +45,8 @@ export default {
 			newData: [],
 			oBetterScroll: '',
 			tBetterScroll: '',
+			vertical: true,
+			LOADING:false,
 			options: {
 				activeColor: '#ed435b',
 				lineWidth: 3,
@@ -59,7 +62,8 @@ export default {
 		Recommend,
 		Like,
 		Ad,
-		Tabbar
+		Tabbar,
+		Loading
 	},
 
 	created() {
@@ -67,13 +71,23 @@ export default {
 	},
 
 	methods: {
+		
 		async getData() {
-			let res = await axios({
-				url: '/api/index_list/0/data/1'
+			
+			// 开始加载
+			this.LOADING = true;
+			let res = await http.$axios({
+				url:'/api/index_list/0/data/1',
 			});
-			this.items = Object.freeze(res.data.data.topBar);
-			this.newData = Object.freeze(res.data.data.data);
+			
+			this.items = Object.freeze(res.topBar);
+			this.newData = Object.freeze(res.data);
 
+			// 结束加载 
+			setTimeout(()=>{
+				this.LOADING = false;
+			},200)
+			
 			// dom加载完毕了才执行
 			this.$nextTick(() => {
 				this.oBetterScroll = new BetterScroll(this.$refs.wrapper, {
@@ -84,14 +98,15 @@ export default {
 		},
 
 		async addData(index) {
-			let res = await axios({
+			let res = await http.$axios({
 				url: '/api/index_list/' + index + '/data/1'
 			});
-
-			if (res.data.data.constructor != Array) {
-				this.newData = res.data.data.data;
+			
+			
+			if (res.constructor != Array) {
+				this.newData = res.data;
 			} else {
-				this.newData = res.data.data;
+				this.newData = res;
 			}
 
 			// dom加载完毕了才执行

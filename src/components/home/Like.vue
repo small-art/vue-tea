@@ -3,7 +3,7 @@
 		<Card><span class="name">猜你喜欢</span></Card>
 		<ul class="box">
 			<li v-for="(item, index) in likeList" :key="index">
-				<h2><img :src="item.imgUrl" /></h2>
+				<h2><img v-lazy="item.imgUrl"/></h2>
 				<div class="title">{{ item.name }}</div>
 				<div class="price">
 					￥
@@ -15,6 +15,9 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { Lazyload } from 'vant';
+Vue.use(Lazyload);
 import Card from './Card.vue';
 export default {
 	props: ['likeList'],

@@ -1,12 +1,32 @@
 var express = require('express');
 var router = express.Router();
 
+// 链接数据库
+var connection = require('../db/sql.js');
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 	res.render('index', {
 		title: 'Express'
 	});
 });
+
+// 查询商品数据接口
+router.get('/api/goods/shopList', function(req,res,next){
+	// 前端给后端的数据
+	let [searchName,orderName] = Object.keys(req.query);
+	let [name,order] = Object.values(req.query);
+	
+	console.log(searchName,orderName)
+	// 连接数据库模糊查询
+	connection.query('SELECT * FROM goods_list WHERE name LIKE "%'+name+'%" order by '+orderName+' '+order+' ', function(error,results,rejects){
+		res.send({
+			code:0,
+			data:results
+		})
+	})
+});
+
 router.get('/api/index_list/1/data/1', function(req, res, next) {
 	res.send({
 		code:1,
@@ -172,16 +192,52 @@ router.get('/api/index_list/0/data/1', function(req, res, next) {
 						},
 						{
 							id: 2,
-							imgUrl: './images/like.jpg',
+							imgUrl: './images/like1.jpg',
 							name: '安吉雨前珍稀白茶1号',
 							price: '333'
 						},
 						{
 							id: 3,
-							imgUrl: './images/like.jpg',
+							imgUrl: './images/like2.jpg',
 							name: '安吉雨前珍稀白茶1号',
 							price: '333'
-						}
+						},
+						{
+							id: 4,
+							imgUrl: './images/like3.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
+						{
+							id: 5,
+							imgUrl: './images/like3.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
+						{
+							id: 6,
+							imgUrl: './images/like4.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
+						{
+							id: 7,
+							imgUrl: './images/like1.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
+						{
+							id: 8,
+							imgUrl: './images/like2.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
+						{
+							id: 9,
+							imgUrl: './images/like4.jpg',
+							name: '安吉雨前珍稀白茶1号',
+							price: '333'
+						},
 					]
 				}
 			],
