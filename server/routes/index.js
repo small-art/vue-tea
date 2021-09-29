@@ -11,55 +11,348 @@ router.get('/', function(req, res, next) {
 	});
 });
 
+// 分类的数据
+router.get('/api/goods/list', function(req, res, next) {
+	res.send({
+		code: 0,
+		data: [
+
+			{
+				// 一级
+				id: 0,
+				name: '推荐',
+				data: [{
+					// 二级
+					id: 0,
+					name: '推荐',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '功夫茶具',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						}
+					]
+				}, ]
+			},
+			{
+				// 一级
+				id: 1,
+				name: '绿茶',
+				data: [{
+					// 二级
+					id: 0,
+					name: '绿茶',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '龙剑',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '碧螺粗',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 6,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						}
+					]
+				}, ]
+			},
+			{
+				// 一级
+				id: 2,
+				name: '红茶',
+				data: [{
+					// 二级
+					id: 0,
+					name: '绿茶',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '龙剑',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '碧螺粗',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						}
+					]
+				}, ]
+			},
+			{
+				// 一级
+				id: 3,
+				name: '白茶',
+				data: [{
+					// 二级
+					id: 0,
+					name: '绿茶',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '龙剑',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '碧螺粗',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						}
+					]
+				}, ]
+			},
+			{
+				// 一级
+				id: 4,
+				name: '黑茶',
+				data: [{
+					// 二级
+					id: 0,
+					name: '绿茶',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '龙剑',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '碧螺粗',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						}
+					]
+				}, ]
+			},
+			{
+				// 一级
+				id: 5,
+				name: '奶茶',
+				data: [{
+					// 二级
+					id: 0,
+					name: '绿茶',
+					list: [
+						// 三级
+						{
+							id: 0,
+							name: '龙剑',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 1,
+							name: '碧螺粗',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 2,
+							name: '紫砂壶',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 3,
+							name: '铁观音',
+							imgUrl: './images/listIcon1.jpg'
+						},
+						{
+							id: 4,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						},
+						{
+							id: 5,
+							name: '铁观音',
+							imgUrl: './images/listIcon.jpg'
+						}
+					]
+				}, ]
+			}
+		]
+	});
+});
+
+
 // 查询商品数据接口
-router.get('/api/goods/shopList', function(req,res,next){
+router.get('/api/goods/shopList', function(req, res, next) {
 	// 前端给后端的数据
-	let [searchName,orderName] = Object.keys(req.query);
-	let [name,order] = Object.values(req.query);
-	
-	console.log(searchName,orderName)
+	let [searchName, orderName] = Object.keys(req.query);
+	let [name, order] = Object.values(req.query);
+
+	console.log(searchName, orderName)
 	// 连接数据库模糊查询
-	connection.query('SELECT * FROM goods_list WHERE name LIKE "%'+name+'%" order by '+orderName+' '+order+' ', function(error,results,rejects){
-		res.send({
-			code:0,
-			data:results
+	connection.query('SELECT * FROM goods_list WHERE name LIKE "%' + name + '%" order by ' + orderName + ' ' +
+		order + ' ',
+		function(error, results, rejects) {
+			res.send({
+				code: 0,
+				data: results
+			})
 		})
-	})
 });
 
 router.get('/api/index_list/1/data/1', function(req, res, next) {
 	res.send({
-		code:1,
-		data:[
-			{
-				id:1,
-				type:'adList',
-				data:[
-					{id:1,imgUrl:'./images/dhp.png'},
-					{id:2,imgUrl:'./images/dhp1.jpg'}
+		code: 1,
+		data: [{
+				id: 1,
+				type: 'adList',
+				data: [{
+						id: 1,
+						imgUrl: './images/dhp.png'
+					},
+					{
+						id: 2,
+						imgUrl: './images/dhp1.jpg'
+					}
 				]
 			},
 			{
 				id: 2,
 				type: 'likeList',
-				data: [{
+				data: [
+					{
 						id: 1,
-						imgUrl: './images/like.jpg',
+						imgUrl: './images/like1.jpg',
 						name: '安吉雨前珍稀白茶1号',
 						price: '333'
 					},
 					{
 						id: 2,
-						imgUrl: './images/like.jpg',
+						imgUrl: './images/like2.jpg',
 						name: '安吉雨前珍稀白茶1号',
 						price: '333'
 					},
 					{
 						id: 3,
-						imgUrl: './images/like.jpg',
+						imgUrl: './images/like3.jpg',
 						name: '安吉雨前珍稀白茶1号',
 						price: '333'
-					}
+					},
+					{
+						id: 4,
+						imgUrl: './images/like4.jpg',
+						name: '安吉雨前珍稀白茶1号',
+						price: '333'
+					},
+					{
+						id: 5,
+						imgUrl: './images/like1.jpg',
+						name: '安吉雨前珍稀白茶1号',
+						price: '333'
+					},
 				]
 			}
 		]
@@ -70,8 +363,7 @@ router.get('/api/index_list/0/data/1', function(req, res, next) {
 	res.send({
 		code: 0,
 		data: {
-			topBar: [
-				{
+			topBar: [{
 					id: 0,
 					label: '首页'
 				},

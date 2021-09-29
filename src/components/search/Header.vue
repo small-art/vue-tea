@@ -5,7 +5,7 @@
 			<img class="search-icon" src="../../assets/images/sousou.png" />
 			<input class="search-put" type="text" v-model="searchVal" placeholder="搜索的内容" />
 		</div>
-		<div class="searchIcon"><span @click="goSeachList">搜索</span></div>
+		<div class="searchIcon"><span @click="goSeachList()">搜索</span></div>
 	</div>
 </template>
 
@@ -17,22 +17,26 @@ export default {
 			searchArr: []
 		};
 	},
-	
+
 	// created() {
 	// 	if(!this.$route.query){
-			
+
 	// 	}
 	// 	// this.$route.query
-	// }, 
-	
+	// },
+
 	methods: {
 		goBack() {
-			this.$router.back();
+			if(this.$route.path != '/search'){
+				this.$router.push('/search');
+			}else{
+				this.$router.push('/')
+			}
 		},
+
 		goSeachList() {
-			
 			// 没有数据就直接返回
-			if (!this.searchVal) return ;
+			if (!this.searchVal) return;
 
 			// 本地存储
 			if (!localStorage.getItem('searchList')) {
@@ -42,10 +46,10 @@ export default {
 				// 有数据把数据拿出来
 				this.searchArr = JSON.parse(localStorage.getItem('searchList'));
 			}
-			
+
 			// 增加数据
 			this.searchArr.unshift(this.searchVal);
-			
+
 			// ES6去重
 			let newArr = new Set(this.searchArr);
 
@@ -53,15 +57,16 @@ export default {
 			localStorage.setItem('searchList', JSON.stringify(Array.from(newArr)));
 
 			// 路径相同就不进行跳转
-			if(this.searchVal === this.$route.query.key) return;
-			
+			if (this.searchVal === this.$route.query.key) return;
+
 			// 跳转页面
 			this.$router.push({
 				name: 'list',
-				query:{
-					key:this.searchVal
+				query: {
+					key: this.searchVal
 				}
 			});
+			
 			
 		}
 	}
@@ -102,7 +107,7 @@ export default {
 		margin-left: 1rem;
 	}
 	.search-put {
-		height:1.75rem;
+		height: 1.75rem;
 		padding-left: 0.625rem;
 		outline: none;
 		border: none;
